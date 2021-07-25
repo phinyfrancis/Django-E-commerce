@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{% block title %} Profile Update {% endblock %}
+{% block content %}
+<div class="container mt-4">
+	<div class="card-dark col-md-6 mx-auto">
+		<div class="card-body">
+			<h3 class="text-center">Profile Update</h3>
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% for i in u %}
+				<div>{{i}}</div>
+				{% endfor %}
+				<div class="row">
+					<div class="col">
+						<a href="{% url 'pf' %}" class="btn btn-info form-control my-2">Back</a>
+					</div>
+					<div class="col">
+						<input type="submit" value="Update" class="btn btn-success my-2 form-control">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

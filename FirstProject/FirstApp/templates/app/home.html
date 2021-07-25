@@ -1,0 +1,70 @@
+{% extends 'app/base.html' %}
+{% load static %} 
+{% block title %}Home{% endblock %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        h1 {
+            color: blue;
+            font-size: 70px;
+            font-family: courier;
+            text-align: center
+        }
+        
+        h2 {
+            color: rgb(0, 0, 0);
+            font-size: 40px;
+            font-family: courier;
+            text-align: left
+        }
+        
+        h3 {
+            color: rgb(0, 0, 0);
+            font-size: 40px;
+            font-family: courier;
+            text-align: left
+        }
+        
+        p {
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            font-family: cursive;
+            text-align: left
+        }
+        
+        li {
+            font-size: 25px
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>home</title>
+</head>
+
+<body>
+    <h1><b> <b>The Watch Store</b></b>
+    </h1>
+
+    <p>
+        <center><b>Welcome To The Watch Store.</b> </p>
+    </center>
+   
+    </center>
+    <p>
+        <a href="home.htm" target="_self"> <img src="{% static 'images/itemimages/watch store 1.jpg' %}" alt="watch" width=700px height=600px align=left> </a>
+    </p>
+    <p>
+        <a href="home.htm" target="_self"> <img src="{% static 'images/itemimages/watch store 2.jpg' %}" alt="watch" width=700px height=600px align=right> </a>
+    </p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p></p>
+</body>
+
+</html>
+{% endblock %}

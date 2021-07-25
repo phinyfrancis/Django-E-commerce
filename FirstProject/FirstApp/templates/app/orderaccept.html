@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block title %} Order Dashboard {% endblock %}
+{% block content %}
+<div class="card-dark col-md">
+    <div class="card-body">
+        <h3 class="text-center p-2">Orders</h3>
+        <table class="table table-bordered table-hover">
+            <tr class="bg-dark text-light">
+                <th>Order number</th>
+                <th>Ordered Person</th>
+                <th>ordered watch</th>
+                <th>Quantity</th>
+                <th>Contact number</th>
+                <th>Address</th>
+            </tr>
+            {% for u in q %}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.person}}</td>
+                <td>{{u.iname}}</td>
+                <td >{{u.iname_quantity}}</td>
+                <td>{{u.contactnumber}}</td>
+                <td>{{u.Address}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

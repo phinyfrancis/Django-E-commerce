@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Order {% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+  {% if messages %}
+  {% for m in messages %}
+  <div class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{m}}
+    </div>
+    {% endfor %}
+    {% endif %}
+<div class="container mt-4">
+        <h3 class="text-center">Available Watches</h3>
+</div>
+<div class="container mt-4">
+  <div class="row mx-2">
+    {% for i in items %}
+      <div class="col col-md-3">
+        <div class="card my-2" >
+          <img class="card-img-top" src="{{i.iimage.url}}" alt="Card image" style="height:200px; width:300" >
+          <div class="card-body">
+            <h4 class="card-title">{{i.iname}}</h4>
+            <h6 class = "card-title text-dark">{{i.iprice}}</h6>
+            {% if i.icategory == 'Indian' %}
+            <h6 class = "card-title text-dark"><span class="badge badge-success">{{i.icategory}}</span></h6>
+            {% else %}
+            <h6 class = "card-title text-dark"><span class="badge badge-danger">{{i.icategory}}</span></h6>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>      
+</div>
+<div class="container-fluid">
+  <div class="row">
+      <h3 class="mt-5" style="margin-left: 750px;">Place Your Order</h3>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="container mt-3">
+              <form method="post" enctype="multipart/form-data">
+                <p>Place Your Order for cash on delivery:</p>
+                  {% csrf_token %}
+                  {% for j in a %}
+                      {{j}}
+                  {% endfor %}
+                  <div class="row">
+                      <div class="col">
+                          <input type="reset" name="Reset" class="btn btn-info my-2 form-control">
+                      </div>
+                      <div class="col">
+                          <input type="submit" value="Add" class="btn btn-success my-2 form-control">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

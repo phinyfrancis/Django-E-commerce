@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{% block title %} Grant Permissions {% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card col-md-6 mx-auto">
+        <div class="card-body">
+            <h3>Grant Permissions</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {% for j in c %}
+                <div>{{j}}</div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'gvpm' %}" class="form-control btn btn-secondary my-2">Back</a>
+                        <div class="col">
+                            <input type="submit" value="Grant" class="btn btn-success my-2" style="width:500px">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

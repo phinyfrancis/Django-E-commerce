@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Add items {% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+    {% if messages %}
+    {% for m in messages %}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{m}}
+      </div>
+      {% endfor %}
+      {% endif %}
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="mt-5" style="margin-left: 750px;">Add An Item</h3>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="container mt-3">
+                <form method="post"enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for j in r %}
+                        {{j}}
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col">
+                            <input type="reset" name="Reset" class="btn btn-info my-2 form-control">
+                        </div>
+                        <div class="col">
+                            <input type="submit" value="Add" class="btn btn-success my-2 form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="card-dark col-md-4 shadow-lg mx-2">
+        <div class="card-body">
+            <form method="post" class="text-light">
+            {% csrf_token %}
+            {% for j in r %}
+                {{j}}
+            {% endfor %}
+            <div class="row">
+                <div class="col">
+                    <input type="reset" name="Reset" class="btn btn-outline-info my-2 form-control">
+                </div>
+                <div class="col">
+                    <input type="submit" value="Add" class="btn btn-outline-success my-2 form-control">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div> -->
